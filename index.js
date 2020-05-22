@@ -5,11 +5,13 @@ var level = 0;
 var started = false;
 
 //keybord press listener one time
-$(document).keypress(function () {
+$(document).click(function () {
     if (!started) {
+  		setTimeout(function(){
         $("#level-title").text("Level " + level);
         nextSequence();
         started = true;
+        },500);
     }
 });
 
@@ -88,7 +90,10 @@ function checkAnswer(currentlevel) {
         },250);
         
         //restarting the game
+        setTimeout(function(){
         startOver();
+        },500);
+
     }
 }
 
