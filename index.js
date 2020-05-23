@@ -4,8 +4,10 @@ var userClickedPattern = [];
 var level = 0;
 var started = false;
 
-//keybord press listener one time
-$(document).click(function () {
+
+var clickHandler = ("ontouchstart" in window ? "touchend" : "click")
+//keybord press or touch listener one time
+$(document).on(clickHandler,function () {
     if (!started) {
   		setTimeout(function(){
         $("#level-title").text("Level " + level);
